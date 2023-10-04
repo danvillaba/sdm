@@ -1,0 +1,89 @@
+.primary {
+	--plainColor: theme('colors.blue.500');
+	--plainHoverBg: theme('colors.blue.100');
+	--plainActiveBg: theme('colors.blue.200');
+	--plainDisabledColor: theme('colors.neutral.400');
+
+	--outlinedColor: theme('colors.blue.500');
+	--outlinedBorder: theme('colors.blue.300');
+	--outlinedHoverBg: theme('colors.blue.100');
+	--outlinedActiveBg: theme('colors.blue.200');
+	--outlinedDisabledColor: theme('colors.neutral.400');
+	--outlinedDisabledBorder: theme('colors.neutral.200');
+
+	--softColor: theme('colors.blue.700');
+	--softBg: theme('colors.blue.100');
+	--softHoverBg: theme('colors.blue.200');
+	--softActiveColor: theme('colors.blue.800');
+	--softActiveBg: theme('colors.blue.300');
+	--softDisabledColor: theme('colors.neutral.400');
+	--softDisabledBg: theme('colors.neutral.50');
+}
+.neutral {
+	--plainColor: theme('colors.neutral.500');
+	--plainHoverBg: theme('colors.neutral.100');
+	--plainActiveBg: theme('colors.neutral.200');
+	--plainDisabledColor: theme('colors.neutral.400');
+
+	--outlinedColor: theme('colors.neutral.500');
+	--outlinedBorder: theme('colors.neutral.300');
+	--outlinedHoverBg: theme('colors.neutral.100');
+	--outlinedActiveBg: theme('colors.neutral.200');
+	--outlinedDisabledColor: theme('colors.neutral.400');
+	--outlinedDisabledBorder: theme('colors.neutral.200');
+
+	--softColor: theme('colors.neutral.700');
+	--softBg: theme('colors.neutral.100');
+	--softHoverBg: theme('colors.neutral.200');
+	--softActiveColor: theme('colors.neutral.800');
+	--softActiveBg: theme('colors.neutral.300');
+	--softDisabledColor: theme('colors.neutral.400');
+	--softDisabledBg: theme('colors.neutral.50');
+}
+
+.plain {
+	background-color: transparent;
+	color: var(--plainColor);
+}
+.plain:hover {
+	background-color: var(--plainHoverBg);
+}
+.plain:active {
+	background-color: var(--plainActiveBg);
+}
+.plain:disabled {
+	color: var(--plainDisabledColor);
+}
+
+.soft {
+	background-color: var(--softBg);
+	color: var(--softColor);
+}
+.soft:hover {
+	background-color: var(--softHoverBg);
+}
+.soft:active {
+	background-color: var(--softActiveBg);
+	color: var(--softActiveColor);
+}
+.soft:disabled {
+	background-color: var(--softDisabledBg);
+	color: var(--softDisabledColor);
+}
+
+.outlined {
+	--variant-borderWidth: 1px;
+	color: var(--outlinedColor);
+	border-color: var(--outlinedBorder);
+	border: var(--variant-borderWidth) solid;
+}
+.outlined:hover {
+	background-color: var(--outlinedHoverBg);
+}
+.outlined:active {
+	background-color: var(--outlinedActiveBg);
+}
+.outlined:disabled {
+	color: var(--outlinedDisabledColor);
+	border-color: var(--outlinedDisabledBorder);
+}

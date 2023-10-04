@@ -1,0 +1,34 @@
+.btn,
+.btn.md {
+	border-radius: var(--Button-radius, theme('borderRadius.md'));
+	margin: var(--Button-margin);
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	text-decoration: none;
+	font-weight: theme('fontWeight.semibold');
+	line-height: 1px;
+
+	/* md */
+	min-height: var(--Button-minHeight, 2.25rem);
+	font-size: 0.875rem;
+	padding-block: 0.25rem;
+	padding-inline: 1rem;
+}
+
+.btn.sm {
+	min-height: var(--Button-minHeight, 2rem);
+	font-size: 0.875rem;
+	padding-block: 2px;
+	padding-inline: 0.75rem;
+}
+.btn.md {
+	min-height: var(--Button-minHeight, 2.25rem);
+	font-size: 0.875rem;
+	padding-block: 0.25rem;
+	padding-inline: 1rem;
+}

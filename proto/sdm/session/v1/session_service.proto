@@ -1,0 +1,27 @@
+syntax = "proto3";
+package sdm.session.v1;
+
+service SessionService {
+  rpc Connect(ConnectRequest) returns (ConnectResponse);
+  rpc Disconnect(DisconnectRequest) returns (DisconnectResponse);
+  rpc Info(InfoRequest) returns (InfoResponse);
+}
+
+message ConnectRequest {
+  string scheme = 1;
+  string host = 2;
+  string username = 3;
+  string password = 4;
+  string database = 5;
+}
+message ConnectResponse { string token = 1; }
+
+message DisconnectRequest { string token = 1; }
+message DisconnectResponse {}
+
+message InfoRequest { string token = 1; }
+message InfoResponse {
+  string id = 1;
+  string scheme = 2;
+  string database = 3;
+}

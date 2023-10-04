@@ -1,0 +1,14 @@
+syntax = "proto3";
+package sdm.inspector.v1;
+
+message Table {
+  string name = 2;
+  string schema = 3;
+  string type = 4;
+  string comment = 5;
+
+  int32 data_size = 6;
+  int32 index_size = 7;
+  int32 total_size = 8;
+  int32 row_count = 9;
+}

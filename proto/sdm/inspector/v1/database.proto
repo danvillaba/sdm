@@ -1,0 +1,7 @@
+syntax = "proto3";
+package sdm.inspector.v1;
+
+message Database {
+  string id = 1;
+  string name = 2;
+}

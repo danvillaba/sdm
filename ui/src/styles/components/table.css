@@ -1,0 +1,89 @@
+.table {
+	--Table-headerUnderlineThickness: 2px;
+	--TableCell-borderColor: theme('colors.neutral.200');
+	--TableCell-headBackground: theme('colors.white');
+	--TableCell-cornerRadius: theme('borderRadius.md');
+	table-layout: fixed;
+	width: 100%;
+	border-spacing: 0px;
+	border-collapse: separate;
+	border-radius: var(
+		--TableCell-cornerRadius,
+		--unstable_actionRadius
+	);
+}
+
+.table.sm {
+	--unstable_TableCell-height: var(--TableCell-height, 32px);
+	--TableCell-paddingX: 0.25rem;
+	--TableCell-paddingY: 0.25rem;
+}
+.table.md {
+	--unstable_TableCell-height: var(--TableCell-height, 40px);
+	--TableCell-paddingX: 0.5rem;
+	--TableCell-paddingY: 0.375rem;
+}
+.table.lg {
+	--unstable_TableCell-height: var(--TableCell-height, 48px);
+	--TableCell-paddingX: 0.75rem;
+	--TableCell-paddingY: 0.5rem;
+}
+.table caption {
+	padding: calc(2 * var(--TableCell-paddingY))
+		var(--TableCell-paddingX);
+}
+
+.table td {
+	padding: var(--TableCell-paddingY) var(--TableCell-paddingX);
+	height: var(--unstable_TableCell-height);
+	border-color: var(--TableCell-borderColor);
+	background-color: var(--TableCell-dataBackground);
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.table th {
+	text-align: left;
+	padding: var(--TableCell-paddingY) var(--TableCell-paddingX);
+	background-color: var(--TableCell-headBackground);
+	height: var(--unstable_TableCell-height);
+	font-weight: theme('fontWeight.bold');
+	border-color: var(--TableCell-borderColor);
+	/* color: theme('colors.neutral.500'); */
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.table.sticky thead {
+	position: sticky;
+	top: 0;
+	z-index: 5;
+}
+
+.table thead th {
+	vertical-align: bottom;
+
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+.table thead th:first-of-type {
+	border-top-left-radius: var(
+		--TableCell-cornerRadius,
+		var(--unstable_actionRadius)
+	);
+}
+
+.table thead th:last-of-type {
+	border-top-right-radius: var(
+		--TableCell-cornerRadius,
+		var(--unstable_actionRadius)
+	);
+}
+
+.table tr:not(:last-of-type) > td {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}

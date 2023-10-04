@@ -1,0 +1,60 @@
+.tabs {
+	--List-gap: 0px;
+	--ListDivider-gap: 0px;
+	--ListItem-paddingX: var(--Tabs-spacing);
+	--Tab-indicatorThickness: 2px;
+
+	display: flex;
+	flex-grow: initial;
+	flex-direction: row;
+	position: relative;
+	border-radius: var(--List-radius, 0px);
+	padding: var(--List-padding, 0px);
+	z-index: 1;
+}
+
+.tabs .tab-list {
+	--List-gap: 0px;
+	flex-grow: initial;
+	border-radius: var(--Tabs-radius, 0px);
+	padding: var(--List-padding);
+	/* padding-bottom: 1px;
+	box-shadow: inset 0 -1px gray; */
+}
+
+.tabs .item {
+	flex: initial;
+	justify-content: center;
+
+	padding-bottom: calc(
+		var(--ListItem-paddingY) - var(--variant-borderWidth, 0px) +
+			var(--Tab-indicatorThickness) - 1px
+	);
+	padding-block-start: var(--ListItem-paddingY);
+	padding-block-end: var(--ListItem-paddingY);
+	padding-inline-start: var(--ListItem-paddingLeft);
+	padding-inline-end: var(--ListItem-paddingRight);
+}
+.tabs .item::after {
+	content: '';
+	display: block;
+	position: absolute;
+	margin: auto;
+	background-color: var(--Tab-indicatorColor);
+	border-radius: var(--Tab-indicatorRadius);
+
+	height: var(--Tab-indicatorThickness);
+	width: var(--Tab-indicatorSize);
+	left: 0;
+	right: 0;
+	bottom: calc(-1px - var(--unstable_TabList-underlineBottom, 0px));
+}
+.tabs [aria-selected='true'],
+.tabs .active {
+	--Tab-indicatorColor: currentColor;
+	z-index: 1;
+}
+
+.tabs.md {
+	--Tabs-spacing: 1rem;
+}

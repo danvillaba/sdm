@@ -1,0 +1,10 @@
+syntax = "proto3";
+package sdm.inspector.v1;
+
+message Object {
+  string id = 1;
+  string schema = 2;
+  string name = 3;
+  string type = 4;
+  string comment = 5;
+}

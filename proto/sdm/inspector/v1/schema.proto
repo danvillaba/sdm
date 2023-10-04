@@ -1,0 +1,7 @@
+syntax = "proto3";
+package sdm.inspector.v1;
+
+message Schema {
+  string name = 1;
+  string database_name = 2;
+}

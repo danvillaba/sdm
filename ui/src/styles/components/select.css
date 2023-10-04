@@ -1,0 +1,46 @@
+.select,
+.select.md {
+	--Select-radius: theme('borderRadius.md');
+	--Select-gap: 0.5rem;
+
+	outline: none;
+	box-sizing: border-box;
+	min-width: 0;
+	min-height: var(--Select-minHeight);
+	position: relative;
+	display: flex;
+	align-items: center;
+	border-radius: var(--Select-radius);
+	cursor: pointer;
+	padding-inline: var(--Select-paddingInline);
+	background-color: transparent;
+
+	/* md */
+	--Select-minHeight: 2.25rem;
+	--Selct-paddingInline: 0.75rem;
+	--Select-decoratorChildHeight: min(
+		1.75rem,
+		var(--Select-minHeight)
+	);
+}
+
+.select::before {
+	box-sizing: border-box;
+	content: '';
+	display: block;
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	border-radius: inherit;
+	margin: calc(var(--variant-borderWidth, 0px) * -1);
+}
+
+.select.sm {
+	--Select-minHeight: 2rem;
+	--Selct-paddingInline: 0.5rem;
+	--Select-decoratorChildHeight: min(1.5rem, var(--Select-minHeight));
+}

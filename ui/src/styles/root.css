@@ -1,0 +1,32 @@
+@import 'components/btn.css';
+@import 'components/chip.css';
+@import 'components/input.css';
+@import 'components/list.css';
+@import 'components/select.css';
+@import 'components/table.css';
+@import 'components/tabs.css';
+@import 'variants.css';
+
+* {
+	font-family: 'Inclusive Sans', sans-serif;
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: theme('colors.neutral.300');
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: theme('colors.neutral.400');
+}

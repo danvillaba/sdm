@@ -1,0 +1,47 @@
+syntax = "proto3";
+package sdm.inspector.v1;
+
+import "google/protobuf/struct.proto";
+
+import "sdm/inspector/v1/column.proto";
+import "sdm/inspector/v1/database.proto";
+import "sdm/inspector/v1/object.proto";
+import "sdm/inspector/v1/schema.proto";
+import "sdm/inspector/v1/table.proto";
+
+service InspectorService {
+  rpc ListDatabases(ListDatabasesRequest) returns (ListDatabasesResponse);
+  rpc ListSchemas(ListSchemasRequest) returns (ListSchemasResponse);
+  rpc ListObjects(ListObjectsRequest) returns (ListObjectsResponse);
+  rpc ListTables(ListTablesRequest) returns (ListTablesResponse);
+  rpc GetTableInfo(GetTableInfoRequest) returns (GetTableInfoResponse);
+  rpc Query(QueryRequest) returns (QueryResponse);
+}
+
+message ListDatabasesRequest {}
+message ListDatabasesResponse { repeated Database databases = 1; }
+
+message ListSchemasRequest {}
+message ListSchemasResponse { repeated Schema schemas = 1; }
+
+message ListObjectsRequest {}
+message ListObjectsResponse { repeated Object objects = 1; }
+
+message ListTablesRequest { string schema = 1; }
+message ListTablesResponse { repeated Table tables = 1; }
+
+message GetTableInfoRequest {
+  string table = 1;
+  string schema = 2;
+}
+message GetTableInfoResponse {
+  Table table = 1;
+  repeated Column columns = 2;
+}
+
+message QueryRequest { string sql = 1; }
+
+message QueryResponse {
+  repeated google.protobuf.ListValue rows = 1;
+  repeated Column columns = 2;
+}
